@@ -30,11 +30,14 @@
 # See the difference between your local code and the remote code
 #git diff main origin/main
 
+# %%
 inventory = {
     "food": {"apples": 50, "bread": 2, "milk": 1},
     "alcohol": {"wine": 12, "beer": 5, "whiskey": 2}
 }
+print(inventory)
 
+# %%
 def find_stock(item_name, inventory_data):
     for category, items in inventory_data.items():
         if item_name in items:
@@ -49,6 +52,7 @@ def find_stock(item_name, inventory_data):
             return quantity
     print(f"{item_name} not found in inventory.")
 
+# %%
 def order_function(item, current_qty, inventory_data, category):
     print(f"--ALERT: {item} is low ({current_qty}). Placing Order for 20 more!")
     # update dictionary: category then item accessed
@@ -56,4 +60,6 @@ def order_function(item, current_qty, inventory_data, category):
 
     print(f"New stock for {item}: {inventory_data[category][item]}")
 
+# %%
 stock_update = find_stock("bread", inventory)
+# %%
